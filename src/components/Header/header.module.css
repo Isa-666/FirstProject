@@ -1,0 +1,43 @@
+.headerContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  padding-top: 20px;
+}
+.shoppingLogo {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transition: fill 0.5s;
+  -moz-transition: fill 0.5s;
+  -ms-transition: fill 0.5s;
+  -o-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+.shoppingLogo:hover {
+  fill: rgb(230, 0, 255);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  font-size: 14px;
+}
+
+.product_counter_logo{
+  background-color: red;
+  text-align: center;
+  position: absolute;
+  color: white;
+  margin-top: -35px;
+  margin-left: 20px;
+border-radius: 50%;
+width: 20px;
+height:20px;
+}
+.inc{
+  width: 40px;
+  height: 20px;
+}

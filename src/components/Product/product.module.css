@@ -1,0 +1,93 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../../../fonts/Poppins-Regular.ttf);
+}
+.product_container{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 400px;
+   
+}
+
+.product_image{
+    width: 190px;
+    height: 200px;
+    -webkit-transition: all 0.3s ease;;
+    -moz-transition: all 0.3s ease;;
+    -o-transition: all 0.3s ease;;
+    transition: all 0.3s ease;
+    padding-top: 20px;
+}
+.product_image:hover{
+ 
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+ 
+}
+.product_NameAndPrice{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Poppins;
+}
+.product_name{
+    width: 195px;
+    text-align: left;
+    font-weight: 700;
+}
+.product_price{
+    color: rgb(50, 50, 50);
+    font-size: 20px;
+    display: flex;
+    gap: 5px;
+}
+.image_container{
+    text-align: center;
+}
+.details_and_shoppingLogo_container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+.shoppingLogo{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: all 0.3s ease;;
+    -moz-transition: all 0.3s ease;;
+    -o-transition: all 0.3s ease;;
+    transition: all 0.3s ease;
+}
+.shoppingLogo:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.viewDetails{
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    -webkit-transition: all 0.3s ease;;
+    -moz-transition: all 0.3s ease;;
+    -o-transition: all 0.3s ease;;
+    transition: all 0.3s ease;
+    
+    -webkit-transition: background-color 1s;
+    -moz-transition:    background-color 1s;
+    -ms-transition:     background-color 1s;
+    -o-transition:      background-color 1s;
+    transition:         background-color 1s;
+}
+.viewDetails:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+background-color: rgb(245, 51, 84);
+color: white;
+font-size: 14px;
+ 
+}

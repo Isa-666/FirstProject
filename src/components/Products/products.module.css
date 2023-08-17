@@ -1,0 +1,8 @@
+.products_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding-left: 120px;
+    padding-right: 120px;
+}

@@ -1,0 +1,27 @@
+.empty_basket_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+gap: 30px;
+margin-top: 120px;
+}
+.no_product_text{
+    font-size: 25px;
+}
+.shop_logo{
+    width: 400px;
+}
+.GoBackButton {
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(87, 0, 169);
+    cursor: pointer;
+    color: aliceblue;
+  }
+  .GoBackButton:hover {
+    background-color: rgb(132, 0, 255);
+    color: #000000;
+  }

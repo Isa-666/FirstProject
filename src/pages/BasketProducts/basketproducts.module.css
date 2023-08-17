@@ -1,0 +1,124 @@
+.basket_products {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid rgb(154, 154, 154);
+  border-radius: 10px;
+}
+.basket_body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 120px;
+  padding-right: 120px;
+  
+}
+.basket_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.basket_product_count {
+  font-size: 20px;
+}
+
+.basket_items {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 70%;
+}
+.image_prouct {
+  width: 100px;
+}
+.product_image_container {
+  display: flex;
+}
+.products_name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 5px;
+}
+.products_count {
+  display: flex;
+  gap: 18px;
+}
+.basket_product_count{
+    color: navy;
+}
+.delete_button {
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transition: fill 0.5s;
+  -moz-transition: fill 0.5s;
+  -ms-transition: fill 0.5s;
+  -o-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+.delete_button:hover {
+  fill: rgb(255, 0, 0);
+}
+.products_color_price_info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.plus_and_minus{
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+.plus_and_minus:hover{
+    transform: scale(1.5);
+    transition: transform 0s;
+}
+.info_basket_price{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    list-style: none;
+}
+.total_price{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+.full_cost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.basket_products{
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	 animation: slide-in-bck-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-in-bck-center {
+  0% {
+    -webkit-transform: translateZ(600px);
+            transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bck-center {
+  0% {
+    -webkit-transform: translateZ(600px);
+            transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}

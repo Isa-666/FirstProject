@@ -1,0 +1,240 @@
+.productDetailFundament {
+  display: flex;
+  justify-content: center;
+}
+.productDetailContainer {
+  width: 70rem;
+  height: 500px;
+  margin-top: 100px;
+  display: flex;
+  background-color: rgb(243, 243, 248);
+  padding: 20px;
+  gap: 20px;
+  border-radius: 15px;
+  justify-content: space-around;
+}
+.productDetailFundamentLoading {
+  display: flex;
+  justify-content: center;
+}
+.productDetailContainerLoading {
+  width: 800px;
+  height: 400px;
+  margin-top: 100px;
+  display: flex;
+  background-color: rgb(243, 243, 248);
+  padding: 20px;
+  gap: 20px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 230px;
+  height: 230px;
+  margin-left: -40px;
+  background-color: rgb(243, 243, 248);
+  -webkit-animation: puff-in-center 0.3s cubic-bezier(0.47, 0, 0.745, 0.715)
+    both;
+  animation: puff-in-center 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+.productDescription {
+  overflow: auto;
+  font-family: "REM", sans-serif;
+  text-align: left;
+  display: flex;
+  width: 500px;
+  height: 90px;
+}
+.productDescription::-webkit-scrollbar {
+  width: 10px;
+}
+
+.productDescription::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.productDescription::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #d55959;
+}
+.ProductDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-left: 40px;
+}
+.ProductDetails > span {
+  font-size: 19px;
+  margin-left: -14px;
+}
+.productName {
+  text-align: center;
+}
+.productPrice {
+  font-size: 19px;
+  margin-left: 0px;
+  text-align: center;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.productPrice > span {
+  color: red;
+  font-weight: 200;
+  font-size: 29px;
+}
+.otherImagesVariants {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.productOtherImagesContainer {
+  display: flex;
+  gap: 5px;
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.Description {
+  font-size: 23px;
+  color: rgb(55, 55, 55);
+  text-decoration: underline;
+  text-align: center;
+}
+
+.styleActive {
+  border: 2px solid rgb(128, 0, 0);
+  border-radius: 9px;
+  -webkit-animation: shake-horizontal 0.3s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  opacity: 1;
+}
+.colorsSection {
+  color: rgb(114, 112, 112);
+  font-size: 18px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 0px;
+  justify-content: center;
+}
+.colorName {
+  font-size: 0;
+}
+.colorContainer {
+  display: flex;
+  gap: 12px;
+}
+.color {
+  width: 32px;
+  border-radius: 50%;
+  height: 32px;
+  cursor: pointer;
+  border: 1px solid gainsboro;
+}
+.buttonAdd {
+  width: 200px;
+  height: 40px;
+  background-color: red;
+  border-radius: 7px;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.buttonAdd:hover {
+  background-color: rgb(235, 126, 126);
+}
+
+.GoBackButton {
+  margin-left: 100px;
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(87, 0, 169);
+  cursor: pointer;
+  color: aliceblue;
+}
+.GoBackButton:hover {
+  background-color: rgb(132, 0, 255);
+  color: #000000;
+}
+.buttonAddSection {
+  text-align: center;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+}
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.quantity_container{
+  display: flex;
+  height: 100xp;
+  gap: 10px;
+}
+.quantity_button{
+  cursor: pointer;
+  width: 50px;
+  height: 40xp;
+  text-align: center;
+}

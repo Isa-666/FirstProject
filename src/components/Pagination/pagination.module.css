@@ -1,0 +1,25 @@
+.numbers{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
+.numbers li{
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.page_numbers_container{
+    margin-top: 100px;
+    padding-bottom: 70px;
+}
+.numbers li:hover {
+background-color: rgb(174, 167, 167);
+border: 1px solid rgb(174, 167, 167);
+}
+.numbers li:focus{
+    background-color: rgb(214, 42, 42);
+}
