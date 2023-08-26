@@ -8,6 +8,7 @@ margin-top: 120px;
 }
 .no_product_text{
     font-size: 25px;
+    display: flex;
 }
 .shop_logo{
     width: 400px;
@@ -25,3 +26,14 @@ margin-top: 120px;
     background-color: rgb(132, 0, 255);
     color: #000000;
   }
+  @media screen and (max-width: 425px) {
+    .no_product_text{
+        font-size: 17px;
+        text-align: center;
+  
+    }
+    .shop_logo{
+        width: 300px;
+    }
+ 
+}

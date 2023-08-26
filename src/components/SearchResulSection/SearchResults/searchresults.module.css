@@ -1,0 +1,15 @@
+.link_css{
+    text-decoration: none;
+    color: black;
+}
+.product_image{
+    width: 100px;
+}
+.result_products{
+    border-bottom: 2px red solid;
+    padding-bottom: 10px;
+    display: flex;
+}
+.product_name{
+    margin-top: 10px;
+}

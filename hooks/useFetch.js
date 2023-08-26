@@ -4,11 +4,11 @@ export default function useFetch(url) {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const asyncFunction = async () => {
     const { data: product } = await commerce.products.list();
 
     setProducts(product);
+
 
     try {
       setLoading(true);
@@ -28,5 +28,6 @@ export default function useFetch(url) {
     products,
     error,
     loading,
+
   };
 }

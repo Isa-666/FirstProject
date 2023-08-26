@@ -10,6 +10,7 @@ import { addProductToCart } from "../../../lib/commerce/commerce";
 import { setCartLength } from "../../store/reducers/BasketReducer";
 import { HiOutlinePlus } from "react-icons/hi";
 import { AiOutlineMinus } from "react-icons/ai";
+import {AiOutlineArrowLeft} from "react-icons/ai";
 const ProductDetails = () => {
   const { product } = useFetchViewDetails(commerce);
   const { loading } = useFetch(commerce);
@@ -43,7 +44,7 @@ const ProductDetails = () => {
     );
   } else if (!loading) {
     return (
-      <div>
+      <div className={styles.abc}>
         <button
           onClick={() => {
             GoBack(-1);
@@ -52,6 +53,9 @@ const ProductDetails = () => {
         >
           Go Back
         </button>
+        <div className={styles.arrow_mobile_container}><AiOutlineArrowLeft onClick={() => {
+            GoBack("/");
+          }} className={styles.mobile_arrow} /></div>
         <div className={styles.productDetailFundament}>
           <div className={styles.productDetailContainer}>
             <div className={styles.imageContainer}>
@@ -128,7 +132,7 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      </div>
+ </div>
     );
   }
 };

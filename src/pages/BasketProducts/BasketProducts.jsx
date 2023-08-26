@@ -5,6 +5,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import styles from "./basketproducts.module.css";
 import Moonloader from "react-spinners/MoonLoader";
+import {AiOutlineArrowLeft} from "react-icons/ai";
 // commerce api
 import {
   getProductFromBasket,
@@ -20,7 +21,7 @@ const BasketProducts = () => {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [loading, setLoading]= useState(true)
+  const [loading, setLoading] = useState(true)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,7 +44,7 @@ const BasketProducts = () => {
       (p) => (
         setLoading(false),
         setProducts(p.line_items, p.id),
-        setTotalPrice(p.subtotal.formatted_with_symbol),
+        setTotalPrice(p.subtotal.raw),
         // setCount(p.length),
         setCount(p.total_items),
         dispatch(setCartLength(p.total_unique_items))
@@ -52,38 +53,50 @@ const BasketProducts = () => {
   }, []);
 
   function deleteProduct(id) {
+    setLoading(true)
     removeFromCart(id).then(
       (p) => (
         setProducts(p.line_items),
-        setTotalPrice(p.subtotal.formatted_with_symbol),
+        setTotalPrice(p.subtotal.raw),
         dispatch(setCartLength(p.total_unique_items)),
-        setCount(p.total_items)
+        setCount(p.total_items),
+        setLoading(false)
       )
     );
   }
 
+
   function updateClick(id, quantity) {
-    updateCart(id, quantity).then(
-      (p) => (
-        setProducts(p.line_items),
-        setTotalPrice(p.subtotal.formatted_with_symbol),
-        setCount(p.total_items)
-       
-      )
-  
-    );
+    setLoading(true),
+      updateCart(id, quantity).then(
+        (p) => (
+          setProducts(p.line_items),
+          setTotalPrice(p.subtotal.raw),
+          setCount(p.total_items),
+          setLoading(false)
+
+        )
+
+      );
   }
+
   return (
     <div>
       <div className={styles.basket_contianer}>
         <div className={styles.basket_body}>
           <div className={styles.basket_product_count}>
-            Səbətdə ({count} məhsul var)
+            <button onClick={() => {
+              navigate("/");
+            }} className={styles.GoBackButton}>Go Back</button>
+            <div className={styles.arrow_mobile_container}><AiOutlineArrowLeft onClick={() => {
+            navigate("/");
+          }} className={styles.mobile_arrow} /></div>
+            <span>In cart total <span className={styles.count}>{count}</span> items</span>
           </div>
           <div className={styles.basket_wrapper}>
             <div className={styles.basket_items}>
-              
-              {loading ? (<Moonloader size={100} color={"blue"}/>) :  products?.map((el) => (
+
+              {loading ? (<Moonloader size={100} color={"blue"} />) : products?.map((el) => (
                 <div key={el.id} className={styles.basket_products}>
                   <div className={styles.product_image_container}>
                     <Link to={`/ProductDetails/${el.product_id}`}>
@@ -96,7 +109,7 @@ const BasketProducts = () => {
                       {el.name}
                       <div className={styles.products_color_price_info}>
                         <span className={styles.price}>
-                          Cost: {el.price.formatted_with_symbol}
+                          Cost: {el.price.raw}$
                         </span>
                         <div className={styles.products_count}>
                           <div
@@ -108,7 +121,7 @@ const BasketProducts = () => {
                           >
                             <AiOutlineMinus className={styles.plus_and_minus} />
                           </div>
-                          <p>{el.quantity}</p>
+                          <p className={styles.quantity_num_mobile}>{el.quantity}</p>
                           <div
                             onClick={() =>
                               updateClick(el.id, +(el.quantity + 1))
@@ -129,26 +142,26 @@ const BasketProducts = () => {
                   </div>
                 </div>
               ))}
-           
+
             </div>
             <div className={styles.full_cost}>
-              <h1>Ümumi</h1>
+              <h1>General</h1>
               <ul className={styles.info_basket_price}>
-                <li className="total-list-item">
-                  <span>Məbləğ:</span>
-                  <span className="list-item-price">{totalPrice}</span>
+                <li className={styles.totalItemsProduct}>
+                  <span>Amount:</span>
+                  <span className="list-item-price">{loading ? (<Moonloader size={20} color={"#ff0000"} />) : totalPrice && <span>{`${totalPrice} ${'$'} `}</span>}</span>
                 </li>
-                <li className="total-list-item">
-                  <span>Hədiyyə paketi:</span>
-                  <span className="list-item-price">0</span>
+                <li className={styles.totalItemsProduct}>
+                  <span>Gifts:</span>
+                  <span className="list-item-price">{loading ? (<Moonloader size={20} color={"#ff0000"} />) : <span>00.00</span>}</span>
                 </li>
-                <li className="total-list-item">
-                  <span>Promo kod:</span>
-                  <span className="list-item-price">00.00</span>
+                <li className={styles.totalItemsProduct}>
+                  <span>Promo:</span>
+                  <span className="list-item-price">{loading ? (<Moonloader size={20} color={"#ff0000"} />) : <span>00.00</span>}</span>
                 </li>
-                <li className="total-list-item">
+                <li>
                   <div className={styles.total_price}>
-                    Cəmi:<span>{totalPrice}</span>
+                    Total:{loading ? (<Moonloader size={20} color={"#ff0000"} />) : totalPrice && <span>{`${totalPrice} ${'$'} `}</span>}
                   </div>
                 </li>
               </ul>
